@@ -1,0 +1,132 @@
+/* ===== Tệp: styles/auth.css ===== */
+
+/* Cài đặt chung cho trang */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4fbfb 0%, #e0f7fa 100%); /* Nền xanh nhạt, mát mẻ */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #455a64;
+}
+
+/* Căn giữa form */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Khung Form Đăng nhập & Đăng ký */
+form {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px; /* Bo góc mềm mại */
+    box-shadow: 0 10px 25px rgba(0, 188, 212, 0.15); /* Đổ bóng màu xanh biển */
+    width: 100%;
+    max-width: 400px;
+    border-top: 5px solid #4dd0e1;
+}
+
+form h2 {
+    text-align: center;
+    color: #00838f;
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* Định dạng các nhóm nhập liệu */
+form p {
+    margin-bottom: 20px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #006064;
+}
+
+/* Ô nhập liệu (Input) */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #b2ebf2;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+    background-color: #fcfefe;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #00bcd4;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 188, 212, 0.3);
+    background-color: #fff;
+}
+
+/* Checkbox & Radio Buttons */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: #00bcd4;
+    transform: scale(1.1);
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+/* Nút Submit */
+button[type="submit"] {
+    width: 100%;
+    background: linear-gradient(135deg, #26c6da 0%, #00acc1 100%);
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.4);
+}
+
+form a {
+    color: #00bcd4;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+
+form a:hover {
+    color: #00838f;
+    text-decoration: underline;
+}
+
+/* Thông báo lỗi */
+.error-message {
+    background-color: #ffebee;
+    color: #c62828;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    border-left: 4px solid #ef5350;
+}

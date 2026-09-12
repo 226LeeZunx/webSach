@@ -1,0 +1,213 @@
+/* ===== Tệp: styles/main.css ===== */
+
+/* 1. Cài đặt nền tảng (Đồng bộ với theme tươi mát) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f4fbfb 0%, #e0f7fa 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    color: #455a64;
+}
+
+/* 2. Trang Welcome: Khung chứa danh mục sách (.link_label) */
+.link_label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Tạo khoảng cách đều giữa các link, thay thế cho <br> */
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Ẩn thẻ <br> vì chúng ta đã dùng flexbox và gap để tạo khoảng cách đẹp hơn */
+.link_label br {
+    display: none; 
+}
+
+/* Styling cho từng nút danh mục */
+.link_label a {
+    display: block;
+    width: 100%;
+    padding: 16px 25px;
+    background-color: #ffffff;
+    color: #00838f; /* Xanh ngọc đậm */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.1);
+    border-left: 5px solid #4dd0e1; /* Điểm nhấn viền trái */
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.link_label a:hover {
+    transform: translateX(8px); /* Hiệu ứng trượt nhẹ sang phải */
+    background-color: #e0f7fa;
+    box-shadow: 0 6px 20px rgba(0, 188, 212, 0.25);
+    color: #006064;
+    border-left-color: #00bcd4;
+}
+
+
+/* 3. Trang List Book: Khung lưới hiển thị sách */
+.book-list {
+    display: grid;
+    /* Tự động chia cột: mỗi cột ít nhất 200px, màn hình to sẽ tự thêm cột */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Thẻ (Card) cho từng quyển sách */
+.book-item {
+    background-color: #ffffff;
+    border-radius: 18px;
+    padding: 25px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(0, 188, 212, 0.1);
+    border-top: 4px solid #b2ebf2;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    text-align: center;
+}
+
+.book-item:hover {
+    transform: translateY(-8px); /* Hiệu ứng nhấc nổi thẻ sách lên */
+    box-shadow: 0 12px 30px rgba(0, 188, 212, 0.25);
+    border-top-color: #00bcd4;
+}
+
+/* Hình ảnh sách */
+.book-item img {
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.book-item:hover img {
+    transform: scale(1.05); /* Phóng to nhẹ ảnh khi hover */
+}
+
+/* Tên sách / Link tải */
+.book-item a {
+    color: #00838f;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-top: auto; /* Đẩy tên sách xuống cuối cùng nếu tên ngắn/dài khác nhau */
+    transition: color 0.2s ease;
+}
+
+.book-item a:hover {
+    color: #00acc1;
+}
+/* ===== 4. Header Chính (header.jsp) ===== */
+
+.header-container {
+    background: linear-gradient(135deg, #ffffff 0%, #e0f7fa 100%);
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đẩy Logo sang trái, cụm nút sang phải */
+    box-shadow: 0 4px 15px rgba(0, 188, 212, 0.15);
+    border-bottom: 3px solid #4dd0e1;
+    border-radius: 0 0 20px 20px; /* Bo góc 2 cạnh dưới */
+    margin-bottom: 30px;
+}
+
+.header-container h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+    color: #00838f; /* Xanh ngọc đậm */
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Ẩn thẻ <hr> mặc định vì ta đã dùng viền border-bottom cho header-container */
+.header-container hr {
+    display: none;
+}
+
+/* Khu vực hiển thị nút bấm / lời chào */
+.login-panel {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Khoảng cách giữa các nút */
+}
+
+/* Reset khoảng cách mặc định của form */
+.login-panel form {
+    margin: 0;
+}
+
+/* Kiểu dáng cho Lời chào (Hello, Username!) */
+.login-panel span {
+    font-weight: 600;
+    color: #006064;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px dashed #00bcd4;
+}
+
+/* --- Tùy chỉnh chung cho các nút Submit --- */
+.login-panel input[type="submit"] {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+/* 1. Nút Sign in (Nền trong suốt, viền xanh) */
+.login-panel input[name="loginbutton"] {
+    background-color: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+}
+
+.login-panel input[name="loginbutton"]:hover {
+    background-color: #00bcd4;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+/* 2. Nút Create Account (Nền gradient xanh nổi bật) */
+.login-panel input[name="Regisbutton"] {
+    background: linear-gradient(135deg, #26c6da 0%, #00acc1 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 188, 212, 0.3);
+}
+
+.login-panel input[name="Regisbutton"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 172, 193, 0.4);
+}
+
+/* 3. Nút Logout (Tone màu đỏ nhạt để phân biệt hành động thoát) */
+.login-panel input[name="logoutbutton"] {
+    background-color: #ffebee;
+    color: #c62828;
+    border: 1px solid #ffcdd2;
+}
+
+.login-panel input[name="logoutbutton"]:hover {
+    background-color: #ef5350;
+    color: #ffffff;
+    border-color: #ef5350;
+    box-shadow: 0 4px 10px rgba(239, 83, 80, 0.3);
+}
